@@ -1,0 +1,235 @@
+/* Responsive Styles - Delice Tacos */
+
+/* Breakpoint 1024px o superior (Desktop) */
+@media (min-width: 1024px) {
+  .menu-trigger-wrapper {
+    display: block; /* Mantiene el botón de 3 puntos disponible como secundario */
+  }
+}
+
+/* Breakpoint inferior a 1024px (Tablet & Mobile) */
+@media (max-width: 1023px) {
+  :root {
+    --header-height: 70px;
+  }
+  
+  .nav-menu {
+    display: none; /* Oculta navegación inline en tablet/móvil */
+  }
+  
+  .header-right .phone-header {
+    display: none; /* Oculta teléfono en texto, usa botón */
+  }
+  
+  /* Hero */
+  .hero {
+    padding-top: calc(var(--header-height) + 20px);
+    text-align: center;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-info-grid {
+    margin: 0 auto;
+  }
+  
+  /* Shortcuts */
+  .shortcuts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  /* Tablet Hero Adjustments */
+  .hero-logo {
+    width: 55%;
+  }
+  
+  /* Builder (Configurador) */
+  .builder-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .builder-summary-sticky {
+    position: static; /* No es sticky en móviles, se coloca al final */
+    width: 100%;
+  }
+  
+  /* Responsive Accordion on Tablet */
+  .accordion-trigger {
+    padding: 16px 24px;
+  }
+  
+  /* Delivery */
+  .delivery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  /* End of Tablet Hero Adjustments */
+  
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Breakpoint inferior a 768px (Mobile Only) */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 74px; /* Espacio para barra de llamada fija inferior */
+  }
+  
+  .mobile-call-bar {
+    display: block; /* Muestra la barra fija de llamada */
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  /* Shortcuts */
+  .shortcuts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .shortcuts-grid > *:last-child {
+    grid-column: span 2; /* Centra el último elemento */
+  }
+  
+  /* Builder options */
+  .builder-options-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .builder-options-grid.grid-3, 
+  .builder-options-grid.grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .option-card {
+    padding: 16px 12px;
+  }
+  
+  /* Responsive Accordion on Mobile */
+  .accordion-trigger {
+    padding: 14px 20px;
+    min-height: 64px; /* Asegura área táctil grande */
+  }
+  .accordion-trigger-center {
+    font-size: 1rem;
+    gap: 10px;
+  }
+  .accordion-indicator {
+    right: 20px;
+  }
+  .accordion-panel-inner {
+    padding: 20px 16px;
+  }
+  .menu-product__header {
+    flex-wrap: wrap; /* El precio se coloca debajo si no cabe */
+    gap: 4px 12px;
+  }
+  .menu-product__price {
+    text-align: left;
+    margin-top: 2px;
+  }
+  .menu-product__description {
+    max-width: 100%;
+  }
+  
+  /* Mobile Hero Adjustments */
+  .hero-logo {
+    width: 80%;
+  }
+  
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .footer-legal-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cta-title {
+    font-size: 2.2rem;
+  }
+  
+  .schedule-time {
+    font-size: 2.2rem;
+  }
+  
+  .schedule-box {
+    padding: 40px 20px;
+  }
+  
+  /* Ajuste de cabecera en móvil */
+  .header-right .btn-primary {
+    display: none; /* Oculta botón de llamada normal de cabecera en móvil, ya que tiene la barra inferior */
+  }
+}
+
+/* Control de animaciones reducidas */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

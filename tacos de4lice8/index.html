@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Delice Tacos | Tacos franceses en El Molar</title>
+  <meta name="description" content="Descubre Delice Tacos en El Molar. Tacos franceses, hamburguesas, shawarmas, bocadillos y mucho más. Lunes cerrado. Martes a domingo de 13:00 a 01:00. ¡Llama y pide!">
+  <link rel="canonical" href="https://www.delicetacos.es/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.delicetacos.es/">
+  <meta property="og:title" content="Delice Tacos | Tacos franceses en El Molar">
+  <meta property="og:description" content="Personaliza tu taco francés clásico o gratinado con ingredientes a tu gusto en El Molar. Hamburguesas, Bocadillos, Paninis y Shawarmas. Lunes cerrado. Martes a domingo: 13:00-01:00.">
+  <meta property="og:image" content="https://www.delicetacos.es/assets/images/hero-taco.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo/logo-small.png">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css?v=5">
+  <link rel="stylesheet" href="styles/responsive.css?v=5">
+  <link rel="stylesheet" href="styles/cart.css?v=5">
+  
+  <!-- Structured Data (JSON-LD) - Local Business & Restaurant -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Restaurant",
+          "@id": "https://www.delicetacos.es/#restaurant",
+          "name": "Delice Tacos",
+          "image": "https://www.delicetacos.es/assets/images/hero-taco.jpg",
+          "url": "https://www.delicetacos.es/",
+          "telephone": "+34919405561",
+          "priceRange": "€",
+          "servesCuisine": ["French Tacos", "Burgers", "Shawarmas", "Halal"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Real, nº 22, El Molar, 28710",
+            "addressLocality": "El Molar",
+            "addressRegion": "Madrid",
+            "postalCode": "28710",
+            "addressCountry": "ES"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.7352,
+            "longitude": -3.5818
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "13:00",
+              "closes": "01:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/tacos_delice/"
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Cabecera Sticky -->
+  <header class="header" id="main-header">
+    <div class="container header-container">
+      <!-- Logotipo -->
+      <a href="#inicio" class="logo-link" aria-label="Delice Tacos Inicio">
+        <img src="assets/logo/logo-small.png" alt="Delice Tacos Logo" class="logo-img">
+      </a>
+      
+      <!-- Navegación Escritorio -->
+      <nav class="nav-menu" aria-label="Navegación principal">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#horario" class="nav-link">Horario</a>
+        <a href="#configurador" class="nav-link">Crea tu Taco</a>
+        <a href="#carta" class="nav-link">Carta</a>
+        <a href="#reparto" class="nav-link">Dónde Estamos</a>
+      </nav>
+      
+      <!-- Botones de Acción Derecho -->
+      <div class="header-right">
+        <a href="tel:+34919405561" class="phone-link phone-header phone-text" id="header-phone-text">91 940 55 61</a>
+        <a href="tel:+34919405561" class="btn btn-call phone-link" id="header-call-btn" aria-label="Llamar para pedir">
+          <!-- Icono Teléfono SVG -->
+          <svg class="hero-info-icon" fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <span>Pedir Ahora</span>
+        </a>
+        
+        <!-- Botón de Menú 3 Puntos -->
+        <button class="btn-dots" id="drawer-trigger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Panel Lateral Desplegable (Drawer de 3 puntos) -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="drawer" id="drawer-menu" aria-label="Panel de navegación lateral" aria-hidden="true">
+    <div class="drawer-header">
+      <img src="assets/logo/logo-small.png" alt="Delice Tacos Logo" class="drawer-logo">
+      <button class="drawer-close" id="drawer-close" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <nav class="drawer-menu" aria-label="Menú móvil">
+      <a href="#horario" class="drawer-link">Horario</a>
+      <a href="#configurador" class="drawer-link">Crea tu Taco</a>
+      <a href="#carta" class="drawer-link">Carta Digital</a>
+      <a href="#reparto" class="drawer-link">Dónde Estamos</a>
+      <a href="tel:+34919405561" class="drawer-link phone-link">Llamar para Pedir</a>
+    </nav>
+    <div class="drawer-info">
+      <div class="drawer-phone-box">
+        <div class="drawer-phone-title">Pide por teléfono</div>
+        <a href="tel:+34919405561" class="drawer-phone-num phone-link phone-text">91 940 55 61</a>
+      </div>
+      <div class="drawer-socials">
+        <a href="https://www.instagram.com/tacos_delice/" class="drawer-social-btn instagram-link" target="_blank" rel="noopener noreferrer" aria-label="Ver Instagram">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        </div>
+    </div>
+  </aside>
+
+  <!-- Hero Principal -->
+  <section class="hero" id="inicio">
+    <div class="fire-glow"></div>
+    <div class="container hero-container-centered">
+      <div class="hero-logo-wrap">
+        <img src="assets/logo/logo.png" alt="Delice Tacos Logo" class="hero-logo" decoding="async">
+      </div>
+      <div class="hero-content-centered">
+        <h1 class="hero-title">EL AUTÉNTICO TACO FRANCÉS</h1>
+        <div class="hero-subtitle">Ahora en El Molar</div>
+        <p class="hero-desc">
+          Carne fresca, patatas fritas, nuestra icónica salsa de queso casera y los aderezos que tú elijas, todo envuelto y tostado a la parrilla en el momento. ¡Crea tu taco perfecto o elige entre nuestros clásicos!
+        </p>
+        <div class="hero-buttons">
+          <a href="#carta" class="btn btn-primary">
+            <span>Ver la Carta</span>
+          </a>
+          <a href="#configurador" class="btn btn-secondary">
+            <span>Crear mi Taco</span>
+          </a>
+          <a href="tel:+34919405561" class="btn btn-call phone-link" id="hero-call-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 2 3 2.45 3 2.99 3 12.37 10.63 20 20.01 20c.54 0 .99-.65.99-1.19v-2.44c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+            <span>Llamar para Pedir</span>
+          </a>
+        </div>
+        <div class="hero-info-grid">
+          <div class="hero-info-item">
+            <svg class="hero-info-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            <div class="hero-info-text">
+              <strong>Preparado al momento</strong>
+              <span>Caliente y tostado a la parrilla</span>
+            </div>
+          </div>
+          <div class="hero-info-item">
+            <svg class="hero-info-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+            </svg>
+            <div class="hero-info-text">
+              <strong>Recogida y Reparto</strong>
+              <span>Reparto a domicilio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Accesos Rápidos -->
+  <div class="shortcuts bg-charcoal">
+    <div class="container shortcuts-grid">
+      <a href="#carta" class="shortcut-card">
+        <svg class="shortcut-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        <span class="shortcut-title">Carta</span>
+      </a>
+      <a href="#configurador" class="shortcut-card">
+        <svg class="shortcut-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span class="shortcut-title">Crear Taco</span>
+      </a>
+      <a href="#horario" class="shortcut-card">
+        <svg class="shortcut-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span class="shortcut-title">Horario</span>
+      </a>
+      <a href="#reparto" class="shortcut-card">
+        <svg class="shortcut-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span class="shortcut-title">Cómo Llegar</span>
+      </a>
+      <a href="tel:+34919405561" class="shortcut-card phone-link">
+        <svg class="shortcut-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        <span class="shortcut-title">Llamar</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sección Horario -->
+  <section class="schedule bg-charcoal" id="horario">
+    <div class="fire-glow" style="bottom: 5%; right: 5%;"></div>
+    <div class="container">
+      <div class="schedule-box">
+        <!-- Icono Reloj SVG -->
+        <svg class="schedule-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <h2 class="schedule-title">NUESTRO HORARIO</h2>
+        <div class="schedule-time">Lunes cerrado<br>Martes a domingo:<br>13:00–01:00</div>
+        <p class="schedule-desc">Abiertos de martes a domingo para que disfrutes de Delice Tacos a la hora del almuerzo, cena o tus antojos nocturnos.</p>
+        <a href="tel:+34919405561" class="btn btn-primary phone-link">Llamar para Pedir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Configurador Interactivo "CREA TU TACO" -->
+  <section class="builder bg-brown" id="configurador">
+    <div class="container">
+      <h2 class="section-title">CREA TU TACO</h2>
+      <p class="section-subtitle">Elige tus ingredientes preferidos paso a paso</p>
+      
+      <div class="builder-grid" id="taco-builder-container">
+        <!-- Pasos del Configurador (Izquierda) -->
+        <div class="builder-steps">
+          
+          <!-- Paso 1: Tipo -->
+          <div class="builder-step active-step" id="builder-step-type">
+            <div class="builder-step-header">
+              <span class="builder-step-num">1</span>
+              <h3 class="builder-step-title">Escoge el tipo de taco</h3>
+            </div>
+            <div class="builder-options-grid" id="builder-type-grid">
+              <!-- Renderizado dinámico desde taco-builder.js -->
+            </div>
+          </div>
+          
+          <!-- Paso 2: Tamaño -->
+          <div class="builder-step" id="builder-step-size">
+            <div class="builder-step-header">
+              <span class="builder-step-num">2</span>
+              <h3 class="builder-step-title">Escoge el tamaño</h3>
+            </div>
+            <div class="builder-options-grid grid-3" id="builder-size-grid">
+              <!-- Renderizado dinámico desde taco-builder.js -->
+            </div>
+          </div>
+          
+          <!-- Paso 3: Carnes -->
+          <div class="builder-step" id="builder-step-meat">
+            <div class="builder-step-header">
+              <span class="builder-step-num">3</span>
+              <h3 class="builder-step-title">Elige tus carnes</h3>
+              <span class="builder-step-info" id="meats-limit-info">Elige según tamaño</span>
+            </div>
+            <div class="builder-options-grid grid-3" id="builder-meat-grid">
+              <!-- Renderizado dinámico desde taco-builder.js -->
+            </div>
+          </div>
+          
+          <!-- Paso 4: Salsas -->
+          <div class="builder-step" id="builder-step-sauce">
+            <div class="builder-step-header">
+              <span class="builder-step-num">4</span>
+              <h3 class="builder-step-title">Escoge tus salsas</h3>
+              <span class="builder-step-info">Máximo 2 salsas</span>
+            </div>
+            <div class="builder-options-grid grid-4" id="builder-sauce-grid">
+              <!-- Renderizado dinámico desde taco-builder.js -->
+            </div>
+          </div>
+          
+          <!-- Paso 5: Acabado/Gratinado (Condicional) -->
+          <div class="builder-step" id="builder-step-gratin" style="display: none;">
+            <div class="builder-step-header">
+              <span class="builder-step-num">5</span>
+              <h3 class="builder-step-title">Escoge el gratinado superior</h3>
+              <span class="builder-step-info">+1.00 €</span>
+            </div>
+            <div class="builder-options-grid grid-3" id="builder-gratin-grid">
+              <!-- Renderizado dinámico desde taco-builder.js -->
+            </div>
+          </div>
+          
+          <!-- Paso 6: Modalidad -->
+          <div class="builder-step" id="builder-step-modality">
+            <div class="builder-step-header">
+              <span class="builder-step-num">6</span>
+              <h3 class="builder-step-title">Elige la modalidad</h3>
+            </div>
+            <div class="builder-options-grid" id="builder-modality-grid">
+              <!-- Renderizado dinámico desde taco-builder.js -->
+            </div>
+          </div>
+          
+          <!-- Paso 7: Bebida del Menú (Condicional) -->
+          <div class="builder-step" id="builder-step-drink" style="display: none;">
+            <div class="builder-step-header">
+              <span class="builder-step-num">7</span>
+              <h3 class="builder-step-title">¿Qué bebida quieres con tu menú?</h3>
+              <span class="builder-step-info">Obligatorio</span>
+            </div>
+            <div class="builder-options-grid grid-3" id="builder-drink-grid">
+              <!-- Renderizado dinámico desde taco-builder.js -->
+            </div>
+            <div class="drink-warning" id="builder-drink-warning" style="display: none; color: #ff6b6b; font-size: 0.85rem; margin-top: 8px; font-weight: 600;">
+              Selecciona una bebida para continuar
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Resumen del Taco (Derecha en Desktop, abajo en Móvil) -->
+        <div class="builder-summary-container">
+          <div class="builder-summary-sticky">
+            <h3 class="builder-summary-title">Resumen de tu Taco</h3>
+            
+            <div class="summary-list">
+              <div class="summary-item">
+                <span class="summary-item-label">Tipo:</span>
+                <span class="summary-item-value" id="sum-type">Clásico</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-item-label">Tamaño:</span>
+                <span class="summary-item-value" id="sum-size">Simple (1 Carne)</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-item-label">Carnes:</span>
+                <span class="summary-item-value placeholder" id="sum-meats">Selecciona carne(s)</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-item-label">Salsas:</span>
+                <span class="summary-item-value placeholder" id="sum-sauces">Selecciona salsas</span>
+              </div>
+              <div class="summary-item" id="sum-gratin-row" style="display: none;">
+                <span class="summary-item-label">Gratinado:</span>
+                <span class="summary-item-value placeholder" id="sum-gratin">Selecciona gratinado</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-item-label">Modalidad:</span>
+                <span class="summary-item-value" id="sum-modality">Solo Taco</span>
+              </div>
+              <div class="summary-item" id="sum-drink-row" style="display: none;">
+                <span class="summary-item-label">Bebida:</span>
+                <span class="summary-item-value placeholder" id="sum-drink">Selecciona bebida</span>
+              </div>
+            </div>
+            
+            <!-- Bloque de Precio -->
+            <div class="builder-price-box">
+              <div class="builder-price-label">Precio Estimado</div>
+              <div class="builder-price-amount" id="builder-total-amount">7.00 €</div>
+              <div class="builder-price-disclaimer">Precio orientativo. Confirma disponibilidad y precio exacto al realizar tu pedido telefónico.</div>
+            </div>
+            
+            <!-- Botón de Pedido -->
+            <button type="button" class="btn btn-primary" id="builder-add-cart-btn" style="width: 100%; border: none;" disabled>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span>Añadir este Taco al Carrito</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carta Completa (Digital Menu) -->
+  <section class="menu bg-charcoal" id="carta">
+    <div class="container menu-accordion-container" style="max-width: 900px; padding: 0 16px;">
+      <h2 class="section-title">Nuestra Carta</h2>
+      <p class="section-subtitle">Pulsa una categoría para desplegar sus productos</p>
+      
+      <!-- Contenedor del Acordeón -->
+      <div class="accordion" id="menu-accordion">
+        <!-- Se inyectará dinámicamente desde scripts/menu.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Reparto y Recogida -->
+  <section class="delivery bg-brown" id="reparto">
+    <div class="container">
+      <h2 class="section-title">PEDIDOS & REPARTO</h2>
+      <p class="section-subtitle">Recoge en el local o consulta reparto a domicilio</p>
+      
+      <div class="delivery-grid">
+        <!-- Recogida -->
+        <div class="delivery-card">
+          <!-- Icono Local SVG -->
+          <svg class="delivery-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+          <h3 class="delivery-title">Recogida en Local</h3>
+          <p class="delivery-desc">Llámanos por teléfono para realizar tu pedido y te indicaremos en cuántos minutos estará listo para recoger. Evita esperas innecesarias y disfruta de tu comida recién hecha.</p>
+          <a href="tel:+34919405561" class="btn btn-secondary phone-link">Llamar para Pedir</a>
+        </div>
+        
+        <!-- Reparto -->
+        <div class="delivery-card">
+          <!-- Icono Moto/Delivery SVG -->
+          <svg class="delivery-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          <h3 class="delivery-title">Reparto a Domicilio</h3>
+          <p class="delivery-desc">Ofrecemos servicio a domicilio en El Molar, Pedrezuela, El Vellón y San Agustín de Guadalix.</p>
+          <div class="delivery-zones">
+            <span class="zone-tag">El Molar</span>
+            <span class="zone-tag">Pedrezuela</span>
+            <span class="zone-tag">El Vellón</span>
+            <span class="zone-tag">San Agustín de Guadalix</span>
+          </div>
+          <p class="delivery-desc" style="margin-top: 0;">También puedes llamar para realizar tu pedido y recogerlo en nuestro local.</p>
+          <a href="tel:+34919405561" class="btn btn-primary phone-link">Llamar para Pedir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dónde Estamos (Contacto e Imagen estática ligera de Mapa) -->
+  <section class="contact bg-charcoal" id="contacto">
+    <div class="container">
+      <h2 class="section-title">DÓNDE ESTAMOS</h2>
+      
+      <!-- Datos de contacto -->
+      <div class="contact-details-row">
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-text-label">Dirección</div>
+            <div class="contact-text-value address-text">Calle Real, nº 22, El Molar, 28710</div>
+            <div class="contact-text-value" style="font-size: 0.9rem; color: var(--muted-gray); font-weight: 400; margin-top: 4px;">El Molar, Comunidad de Madrid</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-text-label">Teléfono de Pedidos</div>
+            <a href="tel:+34919405561" class="contact-text-value phone-link phone-text">Delivery y pedidos para recoger: 91 940 55 61</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-text-label">Horario de Servicio</div>
+            <div class="contact-text-value">Lunes cerrado<br>Martes a domingo:<br>13:00–01:00</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-text-label">Correo Electrónico</div>
+            <a href="mailto:delicetacoselmolar@gmail.com" class="contact-text-value" style="text-decoration: none; transition: var(--transition);">delicetacoselmolar@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa interactivo real de Google Maps -->
+      <div class="map-interactive-container">
+        <iframe 
+          src="https://maps.google.com/maps?q=Calle%20Real%2022%2028710%20El%20Molar%20Madrid&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          class="map-iframe"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de ubicación de Delice Tacos">
+        </iframe>
+        <div class="map-interactive-footer">
+          <div class="map-address-visible">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: middle; color: var(--gold);">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Calle Real, nº 22, 28710 El Molar (Madrid)</span>
+        </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Calle+Real+22+28710+El+Molar+Madrid" 
+             class="btn btn-primary map-route-btn" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Abrir ruta en Google Maps</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redes Sociales Directas -->
+  <section class="socials bg-charcoal" style="padding: 60px 0;">
+    <div class="container text-center" style="text-align: center;">
+      <h2 class="section-title">SÍGUENOS EN REDES</h2>
+      <p class="section-subtitle" style="margin-bottom: 30px;">Mantente al día de nuestras novedades en Instagram</p>
+      
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/tacos_delice/" class="btn btn-secondary instagram-link" target="_blank" rel="noopener noreferrer" style="min-width: 220px;">
+          <!-- Icono Instagram -->
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 8px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>Ver Instagram</span>
+        </a>
+        </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- Marca -->
+      <div class="footer-brand">
+        <img src="assets/logo/logo-small.png" alt="Delice Tacos Logo" class="footer-logo">
+        <p class="footer-brand-desc">Delice Tacos · Los auténticos tacos franceses y la mejor comida rápida en El Molar, Pedrezuela, El Vellón y San Agustín de Guadalix. Hechos al momento.</p>
+        <div class="drawer-socials" style="justify-content: flex-start;">
+          <a href="https://www.instagram.com/tacos_delice/" class="drawer-social-btn instagram-link" target="_blank" rel="noopener noreferrer" aria-label="Ver Instagram">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          </div>
+      </div>
+      
+      <!-- Enlaces rápidos -->
+      <div>
+        <h4 class="footer-title">Enlaces Rápidos</h4>
+        <div class="footer-links">
+          <a href="#horario" class="footer-link">Horario</a>
+          <a href="#configurador" class="footer-link">Crea tu Taco</a>
+          <a href="#carta" class="footer-link">Nuestra Carta</a>
+          <a href="#contacto" class="footer-link">Dónde Estamos</a>
+          </div>
+      </div>
+      
+      <!-- Contacto -->
+      <div>
+        <h4 class="footer-title">Contacto</h4>
+        <div class="footer-contact-item">
+          <strong>Línea de Pedidos</strong>
+          <a href="tel:+34919405561" class="phone-link phone-text">91 940 55 61</a>
+        </div>
+        <div class="footer-contact-item">
+          <strong>Dirección Física</strong>
+          <span class="address-text">Calle Real, nº 22, El Molar, 28710</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong>Correo Electrónico</strong>
+          <a href="mailto:delicetacoselmolar@gmail.com" class="email-link" style="color: var(--light-gray); text-decoration: none; transition: var(--transition);">delicetacoselmolar@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- Horario -->
+      <div>
+        <h4 class="footer-title">Horario</h4>
+        <div class="footer-contact-item">
+          <strong>Horario de Servicio</strong>
+          <span>Lunes cerrado<br>Martes a domingo:<br>13:00–01:00</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Parte baja del Footer -->
+    <div class="container footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 Delice Tacos. Todos los derechos reservados.
+        <div style="font-size: 0.75rem; color: var(--muted-gray); margin-top: 4px;">Información sobre alérgenos disponible bajo consulta telefónica previa a realizar su pedido.</div>
+      </div>
+      <div class="footer-legal-links">
+        <a href="legal/aviso-legal.html" class="footer-legal-link">Aviso Legal</a>
+        <a href="legal/privacidad.html" class="footer-legal-link">Política de Privacidad</a>
+        <a href="legal/cookies.html" class="footer-legal-link">Política de Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante del Carrito -->
+  <button type="button" class="floating-cart-btn" id="cart-toggle-btn" aria-label="Ver Carrito">
+    <svg class="cart-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="20" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span class="cart-count-badge" id="cart-count">0</span>
+  </button>
+
+  <!-- Drawer del Carrito -->
+  <div class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+    <div class="cart-drawer-content">
+      <div class="cart-header">
+        <h3 class="cart-title">Tu Pedido</h3>
+        <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar carrito">&times;</button>
+      </div>
+      <div class="cart-body">
+        <div class="cart-items" id="cart-items-container">
+          <!-- Se inyectan productos -->
+        </div>
+        <div class="cart-empty-msg" id="cart-empty-message">Tu carrito está vacío</div>
+        
+        <form class="cart-checkout-form" id="cart-form" style="display: none;">
+          <h4 class="form-section-title">Datos de Envío a Domicilio</h4>
+          <p class="form-disclaimer">Nota: Reparto disponible únicamente en las siguientes localidades.</p>
+          
+          <div class="form-group">
+            <label for="checkout-village" class="form-label">Localidad *</label>
+            <select id="checkout-village" class="form-select" required>
+              <option value="" disabled selected>Selecciona tu pueblo</option>
+              <option value="El Molar">El Molar</option>
+              <option value="Pedrezuela">Pedrezuela</option>
+              <option value="El Vellón">El Vellón</option>
+              <option value="San Agustín de Guadalix">San Agustín de Guadalix</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="checkout-address" class="form-label">Dirección Completa *</label>
+            <input type="text" id="checkout-address" class="form-input" placeholder="Calle, número, piso, urbanización..." required>
+          </div>
+          
+          <div class="form-group">
+            <label for="checkout-phone" class="form-label">Teléfono de Contacto *</label>
+            <input type="tel" id="checkout-phone" class="form-input" placeholder="Ej: 600 000 000" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="checkout-email" class="form-label">Correo Electrónico *</label>
+            <input type="email" id="checkout-email" class="form-input" placeholder="ejemplo@correo.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="checkout-payment" class="form-label">Método de Pago *</label>
+            <select id="checkout-payment" class="form-select" required>
+              <option value="" disabled selected>Selecciona método de pago</option>
+              <option value="Efectivo">Efectivo</option>
+              <option value="Tarjeta">Tarjeta (al repartidor)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="checkout-note" class="form-label">Notas o Comentarios (Opcional)</label>
+            <textarea id="checkout-note" class="form-textarea" placeholder="Ej: Sin cebolla, llamar al llegar, cambio de bebida por fanta..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="cart-footer" id="cart-footer" style="display: none;">
+        <div class="cart-total-row">
+          <span>Total a pagar:</span>
+          <strong id="cart-total-price">0.00 €</strong>
+        </div>
+        <button type="button" class="btn btn-primary btn-checkout" id="cart-submit-btn">
+          Enviar Pedido por Email (Gmail)
+        </button>
+        <p class="cart-footer-note">Se abrirá tu gestor de correo con el asunto "PEDIDO" y el detalle listo para enviar.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra Fija Inferior de Llamada para Móviles -->
+  <div class="mobile-call-bar" aria-hidden="true">
+    <a href="tel:+34919405561" class="btn btn-primary phone-link mobile-call-btn" id="mobile-call-bar-btn">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px;">
+        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 2 3 2.45 3 2.99 3 12.37 10.63 20 20.01 20c.54 0 .99-.65.99-1.19v-2.44c0-.54-.45-.99-.99-.99z"/>
+      </svg>
+      <span>Llamar para Pedir</span>
+    </a>
+  </div>
+
+  <!-- Banner de Consentimiento de Cookies (RGPD) -->
+  <div class="cookie-banner" id="cookie-consent-banner" aria-live="polite" aria-describedby="cookie-desc">
+    <div class="cookie-title">Control de Privacidad y Cookies</div>
+    <p class="cookie-desc" id="cookie-desc">Utilizamos cookies técnicas necesarias para el correcto funcionamiento del configurador y guardar sus preferencias. Opcionalmente, solicitamos su permiso para recopilar estadísticas de navegación anónimas de Google Analytics 4 con el fin de optimizar el sitio.</p>
+    <div class="cookie-buttons">
+      <button class="btn btn-outline cookie-btn" id="cookie-reject">Rechazar Analíticas</button>
+      <button class="btn btn-primary cookie-btn" id="cookie-accept">Aceptar Todo</button>
+    </div>
+  </div>
+
+  <!-- Modal de Selección de Bebida y Salsas -->
+  <div class="drink-modal" id="drink-modal" aria-hidden="true">
+    <div class="drink-modal-backdrop" id="drink-modal-backdrop"></div>
+    <div class="drink-modal-content">
+      <div class="drink-modal-header">
+        <h3 class="drink-modal-title" id="drink-modal-title">Personalizar pedido</h3>
+        <button type="button" class="drink-modal-close" id="drink-modal-close" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <div class="drink-modal-body">
+        
+        <!-- Contenedor de Selección de Salsas -->
+        <div id="modal-salsas-container" style="display: none; margin-bottom: 24px;">
+          <h4 class="drink-modal-title" id="modal-salsas-title" style="font-size: 0.95rem; margin-bottom: 12px;">Elige tus salsas (Máximo 2)</h4>
+          <div class="drink-options-grid" id="modal-salsas-grid">
+            <!-- Salsas renderizadas dinámicamente -->
+          </div>
+          <div class="drink-warning" id="modal-salsas-warning" style="display: none; color: #ff6b6b; font-size: 0.85rem; margin-top: 8px; font-weight: 600; text-align: center;">
+            Selecciona al menos una salsa para continuar
+          </div>
+        </div>
+
+        <!-- Contenedor de Selección de Bebida -->
+        <div id="modal-bebida-container" style="display: none;">
+          <h4 class="drink-modal-title" id="modal-bebida-title" style="font-size: 0.95rem; margin-bottom: 12px;">¿Qué bebida quieres con tu menú?</h4>
+          <div class="drink-options-grid" id="modal-bebida-grid">
+            <!-- Bebidas renderizadas dinámicamente -->
+          </div>
+          <div class="drink-warning" id="modal-bebida-warning" style="display: none; color: #ff6b6b; font-size: 0.85rem; margin-top: 8px; font-weight: 600; text-align: center;">
+            Selecciona una bebida para continuar
+          </div>
+        </div>
+
+      </div>
+      <div class="drink-modal-footer">
+        <button type="button" class="btn btn-primary" id="modal-drink-submit-btn">Añadir al Carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="scripts/config.js?v=5"></script>
+  <script src="scripts/analytics.js?v=5"></script>
+  <script src="scripts/taco-builder.js?v=5"></script>
+  <script src="scripts/menu.js?v=5"></script>
+  <script src="scripts/cart.js?v=5"></script>
+  <script src="scripts/main.js?v=5"></script>
+</body>
+</html>
